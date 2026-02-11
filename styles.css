@@ -1,0 +1,149 @@
+:root {
+  --bg: #f6f8f5;
+  --panel: #fffef8;
+  --line: #d9dece;
+  --text: #1e2a22;
+  --muted: #5d6a62;
+  --accent: #2e6f53;
+  --error: #b00020;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 80% 0%, #e8efe4 0%, var(--bg) 60%);
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+}
+
+.panel {
+  border-right: 1px solid var(--line);
+  background: linear-gradient(180deg, #fffef8 0%, #f8fbf2 100%);
+  padding: 16px;
+  overflow: auto;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 4px 0 18px;
+  color: var(--muted);
+}
+
+h2 {
+  font-size: 14px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.actions {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+button {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--text);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--accent);
+}
+
+#run {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.error {
+  min-height: 22px;
+  margin-top: 8px;
+  color: var(--error);
+  font-size: 13px;
+}
+
+.examples {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.examples button {
+  width: 100%;
+  text-align: left;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+}
+
+.summary {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 10px;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+.viewer-wrap {
+  position: relative;
+}
+
+#viewer {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 320px 1fr;
+  }
+
+  .panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}

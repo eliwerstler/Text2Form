@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text2Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="panel">
+        <h1>Text2Form</h1>
+        <p class="subtitle">Bare-bones plain English CAD</p>
+
+        <label for="prompt">Prompt</label>
+        <input id="prompt" type="text" value="create 2x2x2 inch box" autocomplete="off" />
+
+        <div class="actions">
+          <button id="run">Run</button>
+          <button id="clear">Clear</button>
+          <button id="export">Export STL</button>
+        </div>
+
+        <div id="error" class="error" role="alert"></div>
+
+        <h2>Examples</h2>
+        <ul class="examples">
+          <li><button class="example">create 2x2x2 inch box</button></li>
+          <li><button class="example">add cylinder radius 10mm height 20mm</button></li>
+          <li><button class="example">add sphere radius 1cm</button></li>
+          <li><button class="example">clear</button></li>
+        </ul>
+
+        <h2>Model</h2>
+        <div id="summary" class="summary">No solids</div>
+      </aside>
+
+      <main class="viewer-wrap">
+        <canvas id="viewer"></canvas>
+      </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
